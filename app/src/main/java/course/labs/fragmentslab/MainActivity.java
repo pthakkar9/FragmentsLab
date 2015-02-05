@@ -26,16 +26,15 @@ public class MainActivity extends Activity implements
 
             mFriendsFragment = new FriendsFragment();
 
-            // add the FriendsFragment to the fragment_container
-
+            //DoneTODO 1 - add the FriendsFragment to the fragment_container
             // Get a reference to the FragmentManager
-            FragmentManager fragmentManager = getFragmentManager();
+            FragmentManager mFragmentManager = getFragmentManager();
 
-            // Begin a new FragmentTransaction
-            FragmentTransaction fragmentTransaction = fragmentManager
+            // Start a new FragmentTransaction
+            FragmentTransaction fragmentTransaction = mFragmentManager
                     .beginTransaction();
 
-            // Add the FriendsFragment
+            // Add the TitleFragment to the layout
             fragmentTransaction.add(R.id.fragment_container, mFriendsFragment);
 
             // Commit the FragmentTransaction
@@ -76,23 +75,17 @@ public class MainActivity extends Activity implements
 
         if (!isInTwoPaneMode()) {
 
-            // replace the fragment_container with the FeedFragment
-
+            //DoneTODO 2 - replace the fragment_container with the FeedFragment
 
             // Get a reference to the FragmentManager
-            FragmentManager fragmentManager = getFragmentManager();
+            FragmentManager mFragmentManager = getFragmentManager();
 
-            // Begin a new FragmentTransaction
-            FragmentTransaction fragmentTransaction = fragmentManager
+            // Start a new FragmentTransaction
+            FragmentTransaction fragmentTransaction = mFragmentManager
                     .beginTransaction();
 
-            // Add the FeedFragment
-            //fragmentTransaction.add(R.id.fragment_container, mFeedFragment);
+            // Add the TitleFragment to the layout
             fragmentTransaction.replace(R.id.fragment_container, mFeedFragment);
-
-
-
-            // Add this FragmentTransaction to the backstack
             fragmentTransaction.addToBackStack(null);
 
             // Commit the FragmentTransaction
